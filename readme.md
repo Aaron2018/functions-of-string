@@ -1,0 +1,1 @@
+This is a python string processing library, it has the same function as native library.
