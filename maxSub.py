@@ -18,6 +18,7 @@ curSubLen=1
 counter=0
 posEnd1=0
 posEnd2=0
+maxSubList=list()
 while curSubLen<=maxSubLen:
     while curSubPos1+curSubLen<=len(s1):
         if curSubPos1+curSubLen==len(s1):
@@ -30,6 +31,7 @@ while curSubLen<=maxSubLen:
             else:
                 posEnd2=curSubPos2+curSubLen
             if s1[curSubPos1:posEnd1]==s2[curSubPos2:posEnd2]:
+                maxSubList.append(s1[curSubPos1:posEnd1])
                 counter+=1
             curSubPos2+=1
         curSubPos1+=1
@@ -38,4 +40,10 @@ while curSubLen<=maxSubLen:
     curSubPos1=0
     curSubPos2=0
 
-print(counter)
+index1=0
+maxSubLenList=list()
+for i in maxSubList:
+    maxSubLenList.append(len(i))
+
+
+print(maxSubList[maxSubLenList.index(max(maxSubLenList))])
